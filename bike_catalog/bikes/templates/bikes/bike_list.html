@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Catalog</title>
+</head>
+<body>
+    <h1>Bike Catalog</h1>
+    <ul>
+    {% for bike in bikes %}
+        <li>
+            {{ bike }}
+            {% if bike.image %}
+                <img src="{{ bike.image.url }}" alt="{{ bike.brand }} {{ bike.model }}">
+            {% endif %}
+            <a href="{% url 'bikes:bike_detail' id=bike.id %}">View Details</a>
+            <a href="{% url 'bikes:edit_bike' id=bike.id %}">Edit</a>
+            <a href="{% url 'bikes:delete_bike' id=bike.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+    <a href="{% url 'bikes:add_bike' %}">Добавить байк</a>
+
+</body>
+</html>

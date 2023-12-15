@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ bike.brand }} {{ bike.model }} Details</title>
+</head>
+<body>
+    <h2>{{ bike.brand }} {{ bike.model }}</h2>
+    <p>Price: {{ bike.price }}</p>
+    <p>Category: {{ bike.category }}</p>
+    <p>Purchase Date: {{ bike.purchase_date }}</p>
+    <img src="{{ bike.photo.url }}" alt="{{ bike.brand }} {{ bike.model }}">
+</body>
+</html>
